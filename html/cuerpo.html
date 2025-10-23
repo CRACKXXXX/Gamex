@@ -1,0 +1,532 @@
+<!-- Document type declaration for HTML5 -->
+<!DOCTYPE html>
+<!-- Root element with language attributes for Spanish and English-->
+<html lang="es,en">
+<head>
+  <!-- Character encoding for proper text display-->
+  <meta charset="UTF-8">
+  <!-- Viewport meta tag for responsive design on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title displayed in browser tab-->
+  <title>GAMEX</title>
+  <!-- Link to external CSS stylesheet for styling-->
+  <link rel="stylesheet" href="../css/estilo.css">
+  <!-- Google Translate script for language translation functionality-->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Preconnect to Google Fonts for faster loading-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts link for custom fonts: Quantico and Train One-->
+  <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Train+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header section containing logo, navigation, and language toggle-->
+  <header>
+    <button id="theme-toggle" onclick="toggleTheme()" style="position: fixed; top: 10px; left: 10px; padding: 10px; background-color: #333; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 20px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+      🌙
+    </button>
+    <div id="google_translate_element"></div>
+    <h1>GAMEX</h1>
+    <nav>
+      <ul>
+        <li><button onclick="showSection('inicio')">Inicio</button></li>
+        <li><button onclick="showSection('nuestros-juegos')">Nuestros Juegos</button></li>
+        <li><button onclick="showSection('ofertas')">Ofertas</button></li>
+        <li><button onclick="showSection('eventos')">Eventos</button></li>
+        <li><button onclick="showSection('contacto')">Contacto</button></li>
+        <li><button onclick="showSection('empleos')">Empleos</button></li>
+        <div id="google_translate_element" style="display:none;"></div>
+        <li><span id="cart-icon" onclick="displayCart()" style="cursor: pointer; font-size: 24px; margin-left: 20px;">🛒 (0)</span></li>
+        <button onclick="toggleLanguage()" style="position: fixed; top: 10px; right: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+          Cambiar Idioma / Change Language
+        </button>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content area containing all page sections-->
+  <main>
+    <!-- Home section, visible by default-->
+    <section id="inicio" class="content-section">
+      <!-- Main heading for the home section-->
+      <h2>¡Bienvenido a GAMEX: Tu Paraíso Gamer!</h2>
+      <!-- Introductory paragraph-->
+      <p>Sumérgete en un universo de entretenimiento digital donde la diversión nunca termina. En GAMEX, transformamos tus momentos libres en aventuras épicas.</p>
+
+      <!-- Subsection: About us-->
+      <h3>¿Quiénes Somos? Tu Comunidad Gamer de Confianza</h3>
+      <p>GAMEX es más que una tienda; somos el corazón palpitante de la comunidad gamer de Canarias desde 2024. Nuestro apasionado equipo de expertos en videojuegos está dedicado a guiarte hacia experiencias inolvidables. Ya seas un novato curioso o un veterano experimentado, estamos aquí para hacer que cada compra sea una victoria.</p>
+
+      <!-- Subsection: Our offerings-->
+      <h3>Nuestra Amplia Gama de Productos</h3>
+      <ul>
+        <li><strong>Videojuegos de Última Generación:</strong> Desde blockbusters AAA hasta joyas indie, nuestra colección incluye títulos que definen la industria del gaming.</li>
+        <li><strong>Consolas de Alto Rendimiento:</strong> PlayStation, Xbox, Nintendo Switch y más – mantenemos tu setup actualizado con la tecnología más avanzada para una experiencia inmersiva.</li>
+        <li><strong>Accesorios Premium:</strong> Mandos ergonómicos, auriculares con cancelación de ruido, sillas gaming, teclados mecánicos y figuras coleccionables para personalizar tu rincón gamer.</li>
+        <li><strong>Merchandising Exclusivo:</strong> Ropa, posters, tazas y artículos temáticos de tus sagas favoritas – lleva el espíritu gamer a todos lados.</li>
+      </ul>
+
+      <!-- Subsection: Why choose GAMEX-->
+      <h3>¿Por Qué GAMEX es Tu Mejor Opción?</h3>
+      <ul>
+        <li><strong>Servicio al Cliente Personalizado:</strong> No somos robots; somos gamers como tú. Te asesoramos con pasión, recomendando juegos basados en tus gustos y presupuesto.</li>
+        <li><strong>Comunidad y Eventos Interactivos:</strong> Únete a torneos emocionantes, noches de LAN parties y eventos exclusivos donde forjas amistades y demuestras tus habilidades.</li>
+        <li><strong>Ofertas Irresistibles:</strong> Descuentos exclusivos, bundles sorpresa y promociones flash que hacen que ahorrar sea tan divertido como jugar.</li>
+        <li><strong>Garantía de Satisfacción:</strong> Si no amas tu compra, nosotros tampoco. Política de devolución flexible para tu tranquilidad.</li>
+      </ul>
+
+      <!-- Subsection: Visit us-->
+      <h3>Descubre Nuestra Tienda Física</h3>
+      <p>Ven a visitarnos en Calle Triana, 91, 35002 Las Palmas de Gran Canaria, Las Palmas. Nuestro espacio está diseñado para inspirarte: zonas de prueba, exposiciones temáticas y un ambiente donde los gamers se sienten en casa. ¿Prefieres comodidad? Nuestra tienda online está disponible 24/7 para pedidos rápidos y entregas a domicilio.</p>
+
+      <!-- Subsection: Contact us-->
+      <h3>Estamos Aquí para Ti</h3>
+      <p>¿Dudas sobre un juego? ¿Necesitas consejos para tu setup? ¿Quieres unirte a nuestros eventos? Contáctanos sin compromiso. Escríbenos a GAMEX@gmail.com o llama al 691 77 11 22. ¡Tu próxima aventura gamer comienza con una conversación!</p>
+    </section>
+
+    <!-- Games section, hidden by default-->
+    <section id="nuestros-juegos" class="content-section" style="display: none;">
+      <!-- Section heading-->
+      <h5>Nuestros Juegos</h5>
+      <!-- Container for game cards arranged in a grid-->
+      <div class="game-container">
+        <!-- Individual game card for Zelda-->
+        <div class="game-card">
+          <h3>The Legend of Zelda: Tears of the Kingdom</h3>
+          <img src="../img/imagen_zelda.jpg" alt="The Legend of Zelda: Tears of the Kingdom" class="game-image">
+          <p><strong>Plataforma:</strong> Nintendo Switch</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> La secuela de "Breath of the Wild" ofrece un mundo expansivo lleno de aventuras, puzles y una narrativa profunda que sigue a Link en su misión para salvar Hyrule.</p>
+          <button onclick="addToCart('The Legend of Zelda: Tears of the Kingdom', 69.99, '../img/imagen_zelda.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Baldur's Gate 3-->
+        <div class="game-card">
+          <h3><span class="notranslate">Baldur's Gate 3</span></h3>
+          <img src="../img/imagen_baldurs_gate.jpg" alt="Baldur's Gate 3" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS5</p>
+          <p><strong>Precio:</strong> $59.99</p>
+          <p><strong>Descripción:</strong> <span class="notranslate">Un RPG de Baldur's Gate</span> basado en la famosa serie de <span class="notranslate">Dungeons & Dragons</span>, donde las decisiones del jugador afectan la historia y el desarrollo de los personajes.</p>
+          <button onclick="addToCart('Baldur\'s Gate 3', 59.99, '../img/imagen_baldurs_gate.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Call of Duty-->
+        <div class="game-card">
+          <h3>Call of Duty: Modern Warfare II</h3>
+          <img src="../img/imagen_call_of_duty.jpg" alt="Call of Duty: Modern Warfare II" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> La última entrega de la popular franquicia de shooters, con un modo campaña emocionante y un multijugador adictivo.</p>
+          <button onclick="addToCart('Call of Duty: Modern Warfare II', 69.99, '../img/imagen_call_of_duty.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Starfield-->
+        <div class="game-card">
+          <h3>Starfield</h3>
+          <img src="../img/imagen_starfield.jpg" alt="Starfield" class="game-image">
+          <p><strong>Plataforma:</strong> PC, Xbox Series X/S</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> Un juego de rol espacial de Bethesda que permite a los jugadores explorar un vasto universo, personalizar naves y participar en combates intergalácticos.</p>
+          <button onclick="addToCart('Starfield', 69.99, '../img/imagen_starfield.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Spider-Man 2-->
+        <div class="game-card">
+          <h3>Spider-Man 2</h3>
+          <img src="../img/imagen_spiderman.jpg" alt="Spider-Man 2" class="game-image">
+          <p><strong>Plataforma:</strong> PS5</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> La secuela del aclamado juego de acción, donde los jugadores pueden alternar entre Peter Parker y Miles Morales mientras luchan contra villanos icónicos.</p>
+          <button onclick="addToCart('Spider-Man 2', 69.99, '../img/imagen_spiderman.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Mortal Kombat 1-->
+        <div class="game-card">
+          <h3>Mortal Kombat 1</h3>
+          <img src="../img/imagen_mortal_kombat.jpg" alt="Mortal Kombat 1" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS5, Xbox Series X/S, Nintendo Switch</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> La última entrega de la famosa saga de peleas, que presenta nuevos personajes y mecánicas de combate mejoradas.</p>
+          <button onclick="addToCart('Mortal Kombat 1', 69.99, '../img/imagen_mortal_kombat.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Resident Evil 4 Remake-->
+        <div class="game-card">
+          <h3>Resident Evil 4 (Remake)</h3>
+          <img src="../img/imagen_resident_evil.jpg" alt="Resident Evil 4 (Remake)" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox Series X/S</p>
+          <p><strong>Precio:</strong> $59.99</p>
+          <p><strong>Descripción:</strong> Un remake del clásico de terror, con gráficos mejorados y una jugabilidad actualizada que mantiene la esencia del original mientras introduce nuevas mecán icas y elementos narrativos.</p>
+          <button onclick="addToCart('Resident Evil 4 (Remake)', 59.99, '../img/imagen_resident_evil.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Final Fantasy XVI-->
+        <div class="game-card">
+          <h3>Final Fantasy XVI</h3>
+          <img src="../img/imagen_final_fantasy.jpg" alt="Final Fantasy XVI" class="game-image">
+          <p><strong>Plataforma:</strong> PS5, PC</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> La última entrega de la icónica serie de RPG, que presenta un mundo vasto y una narrativa épica centrada en la lucha por el control de los Eikons y el destino de los reinos.</p>
+          <button onclick="addToCart('Final Fantasy XVI', 69.99, '../img/imagen_final_fantasy.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Hogwarts Legacy-->
+        <div class="game-card">
+          <h3>Hogwarts Legacy</h3>
+          <img src="../img/imagen_hogwarts_legacy.jpg" alt="Hogwarts Legacy" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch</p>
+          <p><strong>Precio:</strong> $59.99</p>
+          <p><strong>Descripción:</strong> Un juego de rol de acción ambientado en el mundo mágico de Harry Potter, donde los jugadores pueden explorar Hogwarts y sus alrededores mientras desarrollan sus habilidades mágicas.</p>
+          <button onclick="addToCart('Hogwarts Legacy', 59.99, '../img/imagen_hogwarts_legacy.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for FIFA 23-->
+        <div class="game-card">
+          <h3>FIFA 23</h3>
+          <img src="../img/fifa23.jpg" alt="FIFA 23" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch</p>
+          <p><strong>Precio:</strong> $69.99</p>
+          <p><strong>Descripción:</strong> La última entrega de la serie FIFA, con gráficos realistas, modos de juego innovadores y equipos actualizados para una experiencia de fútbol inmersiva.</p>
+          <button onclick="addToCart('FIFA 23', 69.99, '../img/fifa23.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Minecraft-->
+        <div class="game-card">
+          <h3>Minecraft</h3>
+          <img src="../img/minecraft.jpg" alt="Minecraft" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch, Mobile</p>
+          <p><strong>Precio:</strong> $29.99</p>
+          <p><strong>Descripción:</strong> Un juego de sandbox donde los jugadores pueden construir, explorar y sobrevivir en un mundo generado proceduralmente, con modos creativos y de supervivencia.</p>
+          <button onclick="addToCart('Minecraft', 29.99, '../img/minecraft.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Among Us-->
+        <div class="game-card">
+          <h3>Among Us</h3>
+          <img src="../img/among.jpg" alt="Among Us" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch, Mobile</p>
+          <p><strong>Precio:</strong> $4.99</p>
+          <p><strong>Descripción:</strong> Un juego multijugador de deducción social donde los jugadores deben identificar a los impostores entre la tripulación en una nave espacial.</p>
+          <button onclick="addToCart('Among Us', 4.99, '../img/among.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Fortnite-->
+        <div class="game-card">
+          <h3>Fortnite</h3>
+          <img src="../img/fornite.jpg" alt="Fortnite" class="game-image">
+          <p><strong>Plataforma:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch, Mobile</p>
+          <p><strong>Precio:</strong> Gratis (con compras in-app)</p>
+          <p><strong>Descripción:</strong> Un battle royale gratuito con construcción, donde 100 jugadores luchan hasta que queda uno, con actualizaciones constantes y eventos temáticos.</p>
+          <button onclick="addToCart('Fortnite', 0, '../img/fornite.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Game card for Valorant-->
+        <div class="game-card">
+          <h3>Valorant</h3>
+          <img src="../img/valo.jpg" alt="Valorant" class="game-image">
+          <p><strong>Plataforma:</strong> PC</p>
+          <p><strong>Precio:</strong> Gratis</p>
+          <p><strong>Descripción:</strong> Un shooter táctico en primera persona gratuito, con agentes únicos, habilidades estratégicas y modos de juego competitivos.</p>
+          <button onclick="addToCart('Valorant', 0, '../img/valo.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers section, hidden by default-->
+    <section id="ofertas" class="content-section" style="display: none;">
+      <!-- Section heading-->
+      <h5>Ofertas</h5>
+      <!-- Introductory text-->
+      <p>No te pierdas nuestras increíbles ofertas:</p>
+
+      <!-- Subsection heading for top offers-->
+      <h3>Los Favoritos</h3>
+      <!-- Container for offer cards in a flex layout-->
+      <div class="offer-container">
+        <!-- Offer card for Zelda-->
+        <div class="offer-card">
+          <h4>The Legend of Zelda: Tears of the Kingdom</h4>
+          <p><strong>Precio original:</strong> $69.99</p>
+          <p><strong>Oferta:</strong> $55.99 (20% de descuento)</p>
+          <img src="../img/imagen_zelda.jpg" alt="The Legend of Zelda: Tears of the Kingdom" class="offer-image">
+          <button onclick="addToCart('The Legend of Zelda: Tears of the Kingdom', 55.99, '../img/imagen_zelda.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Offer card for Baldur's Gate 3-->
+        <div class="offer-card">
+          <h4><span class="notranslate">Baldur's Gate 3</span></h4>
+          <p><strong>Precio original:</strong> $59.99</p>
+          <p><strong>Oferta:</strong> $41.99 (30% de descuento)</p>
+          <img src="../img/imagen_baldurs_gate.jpg" alt="Baldur's Gate 3" class="offer-image">
+          <button onclick="addToCart('Baldur\'s Gate 3', 41.99, '../img/imagen_baldurs_gate.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Offer card for Resident Evil 4-->
+        <div class="offer-card">
+          <h4>Resident Evil 4 (Remake)</h4>
+          <p><strong>Precio original:</strong> $59.99</p>
+          <p><strong>Oferta:</strong> $47.99 (20% de descuento)</p>
+          <img src="../img/imagen_resident_evil.jpg" alt="Resident Evil 4 (Remake)" class="offer-image">
+          <button onclick="addToCart('Resident Evil 4 (Remake)', 47.99, '../img/imagen_resident_evil.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Offer card for FIFA 23-->
+        <div class="offer-card">
+          <h4>FIFA 23</h4>
+          <p><strong>Precio original:</strong> $69.99</p>
+          <p><strong>Oferta:</strong> $55.99 (20% de descuento)</p>
+          <img src="../img/fifa23.jpg" alt="FIFA 23" class="offer-image">
+          <button onclick="addToCart('FIFA 23', 55.99, '../img/fifa23.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Offer card for Minecraft-->
+        <div class="offer-card">
+          <h4>Minecraft</h4>
+          <p><strong>Precio original:</strong> $29.99</p>
+          <p><strong>Oferta:</strong> $23.99 (20% de descuento)</p>
+          <img src="../img/minecraft.jpg" alt="Minecraft" class="offer-image">
+          <button onclick="addToCart('Minecraft', 23.99, '../img/minecraft.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+        <!-- Offer card for Among Us-->
+        <div class="offer-card">
+          <h4>Among Us</h4>
+          <p><strong>Precio original:</strong> $4.99</p>
+          <p><strong>Oferta:</strong> $3.99 (20% de descuento)</p>
+          <img src="../img/among.jpg" alt="Among Us" class="offer-image">
+          <button onclick="addToCart('Among Us', 3.99, '../img/among.jpg')" class="btn">Agregar al Carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events section, hidden by default-->
+    <section id="eventos" class="content-section" style="display: none;">
+      <!-- Section heading-->
+      <h5>Eventos de Videojuegos 2025</h5>
+
+      <!-- Event card for Smash Bros tournament-->
+      <div class="event">
+        <h3>Torneo de Super Smash Bros. Ultimate</h3>
+        <img src="../img/smash_bros_torneo.jpg" alt="Torneo de Smash Bros">
+        <div class="details">
+          <strong>Fecha:</strong> Sábado, 22 de marzo de 2025<br>
+          <strong>Horario:</strong> 14:00 - 18:00<br>
+          <strong>Precio de Entrada:</strong> $10<br>
+          <strong>Precio de Participación:</strong> $20<br>
+          <strong>Detalles:</strong> Compite contra otros jugadores en este emocionante torneo. Se premiará a los tres primeros lugares con trofeos y premios en efectivo. ¡Inscríbete antes de que se agoten los lugares!
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for Retro Games Marathon-->
+      <div class="event">
+        <h3>Maratón de Juegos Retro</h3>
+        <img src="../img/juegos_retro.jpg" alt="Maratón de Juegos Retro">
+        <div class="details">
+          <strong>Fecha:</strong> Domingo, 30 de marzo de 2025<br>
+          <strong>Horario:</strong> 10:00 - 20:00<br>
+          <strong>Precio de Entrada:</strong> $5<br>
+          <strong>Precio de Participación:</strong> Gratis (solo para jugar)<br>
+          <strong>Detalles:</strong> Un día completo dedicado a los clásicos. Ven a disfrutar de juegos retro en consolas clásicas y participa en concursos de puntuación. Habrá premios para los mejores jugadores.
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for League of Legends tournament-->
+      <div class="event">
+        <h3>Torneo de League of Legends</h3>
+        <img src="../img/league_of_legends_torneo.jpg" alt="Torneo de League of Legends">
+        <div class="details">
+          <strong>Fecha:</strong> Sábado, 7 de junio de 2025<br>
+          <strong>Horario:</strong> 16:00 - 22:00<br>
+          <strong>Precio de Entrada:</strong> $15<br>
+          <strong>Precio de Participación:</strong> $30 por equipo<br>
+          <strong>Detalles:</strong> Forma tu equipo y compite en este torneo de League of Legends. Los ganadores recibirán premios en efectivo y artículos del juego. ¡No te lo pierdas!
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for Board Games and Video Games Night-->
+      <div class="event">
+        <h3>Noche de Juegos de Mesa y Videojuegos</h3>
+        <img src="../img/noche_de_juegos.jpg" alt="Noche de Juegos">
+        <div class="details">
+          <strong>Fecha:</strong> Viernes, 12 de septiembre de 2025<br>
+          <strong>Horario:</strong> 18:00 - 23:00<br>
+          <strong>Precio de Entrada:</strong> $7<br>
+          <strong>Precio de Participación:</strong> Gratis (para jugar)<br>
+          <strong>Detalles:</strong> Disfruta de una noche de diversión con videojuegos y juegos de mesa. Habrá diferentes estaciones con juegos populares y un área para torneos informales.
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for Fortnite Championship-->
+      <div class="event">
+        <h3>Campeonato de Fortnite</h3>
+        <img src="../img/campeonato_fortnite.jpg" alt="Campeonato de Fortnite">
+        <div class="details">
+          <strong>Fecha:</strong> Domingo, 19 de octubre de 2025<br>
+          <strong>Horario:</strong> 15:00 - 19:00<br>
+          <strong>Precio de Entrada:</strong> $10<br>
+          <strong>Precio de Participación:</strong> $20<br>
+          <strong>Detalles:</strong> Demuestra tus habilidades en este campeonato de Fortnite. Los participantes competirán en varias rondas y los mejores recibirán premios en efectivo y artículos exclusivos del juego.
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for Valorant Championship-->
+      <div class="event">
+        <h3>Campeonato de Valorant</h3>
+        <img src="../img/valorant_campeonato.jpg" alt="Campeonato de Valorant">
+        <div class="details">
+          <strong>Fecha:</strong> Domingo, 12 de abril de 2025<br>
+          <strong>Horario:</strong> 15:00 - 19:00<br>
+          <strong>Precio de Entrada:</strong> $10<br>
+          <strong>Precio de Participación:</strong> $20<br>
+          <strong>Detalles:</strong> Demuestra tus habilidades en este emocionante campeonato de Valorant. Los mejores equipos se llevarán premios y reconocimiento.
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for FIFA Tournament-->
+      <div class="event">
+        <h3>Torneo de FIFA 23</h3>
+        <img src="../img/fifa23t.jpg" alt="Torneo de FIFA 23">
+        <div class="details">
+          <strong>Fecha:</strong> Sábado, 15 de mayo de 2025<br>
+          <strong>Horario:</strong> 14:00 - 18:00<br>
+          <strong>Precio de Entrada:</strong> $10<br>
+          <strong>Precio de Participación:</strong> $20<br>
+          <strong>Detalles:</strong> Compite en un torneo de FIFA 23 con premios para los ganadores. ¡Demuestra tus habilidades en el campo virtual!
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for Minecraft Building Contest-->
+      <div class="event">
+        <h3>Concurso de Construcción en Minecraft</h3>
+        <img src="../img/minecraftt.jpg" alt="Concurso de Construcción en Minecraft">
+        <div class="details">
+          <strong>Fecha:</strong> Domingo, 22 de junio de 2025<br>
+          <strong>Horario:</strong> 10:00 - 16:00<br>
+          <strong>Precio de Entrada:</strong> $5<br>
+          <strong>Precio de Participación:</strong> Gratis<br>
+          <strong>Detalles:</strong> Crea las estructuras más creativas en Minecraft. Los mejores diseños serán premiados con códigos de regalo y reconocimiento.
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+
+      <!-- Event card for Among Us Social Night-->
+      <div class="event">
+        <h3>Noche Social de Among Us</h3>
+        <img src="../img/amongt.jpg" alt="Noche Social de Among Us">
+        <div class="details">
+          <strong>Fecha:</strong> Viernes, 10 de julio de 2025<br>
+          <strong>Horario:</strong> 20:00 - 23:00<br>
+          <strong>Precio de Entrada:</strong> $7<br>
+          <strong>Precio de Participación:</strong> Gratis<br>
+          <strong>Detalles:</strong> Únete a una noche de diversión con Among Us. Sesiones de juego, concursos y premios para los mejores detectives.
+        </div>
+        <!-- Registration link-->
+        <a href="https://forms.gle/AhPFbSdPbgbJ5GhJA" class="btn" target="_blank">Inscribirse</a>
+      </div>
+    </section>
+
+    <!-- Contact section, hidden by default-->
+    <section id="contacto" class="content-section" style="display: none;">
+      <!-- Section heading-->
+      <h5>Conecta con GAMEX: Tu Puente al Mundo Gamer</h5>
+      <!-- Contact information container-->
+      <div class="contact-info">
+        <p>¿Listo para elevar tu experiencia gaming? En GAMEX, creemos que la comunicación es clave para aventuras inolvidables. Ya sea que busques recomendaciones personalizadas, soporte técnico o simplemente quieras charlar sobre tu último logro, nuestro equipo está ansioso por escucharte. ¡No somos solo una tienda, somos tu aliado gamer!</p>
+
+        <!-- Address information-->
+        <strong>🏠 Nuestra Ubicación Estratégica:</strong><br>
+        Calle Triana, 91<br>
+        35002 Las Palmas de Gran Canaria, Las Palmas<br>
+        <em>¡Fácil acceso y parking cercano para tu comodidad!</em><br><br>
+
+        <!-- Email contact-->
+        <strong>📧 Correo Electrónico Directo:</strong><br>
+        <a href="mailto:GAMEX@gmail.com">GAMEX@gmail.com</a><br>
+        <em>Respuesta garantizada en menos de 24 horas.</em><br><br>
+
+        <!-- Phone contact-->
+        <strong>📞 Línea Telefónica Gamer:</strong><br>
+        📞 691 77 11 22<br>
+        <em>Llama y habla con expertos reales, no con bots.</em><br><br>
+
+        <!-- Business hours-->
+        <strong>🕒 Horarios de Atención Personalizada:</strong><br>
+        Lunes a Viernes: 9:00 AM - 6:00 PM<br>
+        Sábados: 10:00 AM - 2:00 PM<br>
+        <em>Domingos: Cerrado para recargar baterías y jugar.</em><br><br>
+
+        <p><strong>💡 Consejos Rápidos:</strong> Para consultas urgentes sobre pedidos o eventos, usa el teléfono. Para recomendaciones detalladas, el email es ideal. ¡Estamos aquí para hacer que tu experiencia GAMEX sea perfecta!</p>
+      </div>
+
+      <!-- Map container-->
+      <div class="map-container">
+        <!-- Map heading-->
+        <h2>Localízanos Fácilmente en el Mapa Interactivo</h2>
+        <p>¿Planeando una visita? Usa nuestro mapa integrado para navegar hasta nosotros. Incluye indicaciones paso a paso, tiempos estimados y opciones de transporte público. ¡Llega y comienza tu aventura gamer inmediatamente!</p>
+        <!-- Embedded Google Map iframe-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d219.95586295570152!2d-15.417028809797868!3d28.10707630834215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1731577935311!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <!-- Jobs section, hidden by default-->
+    <section id="empleos" class="content-section" style="display: none;">
+      <!-- Section heading-->
+      <h5>Únete a Nuestro Equipo</h5>
+      <!-- Introductory paragraph-->
+      <p>En GAMEX siempre estamos buscando personas apasionadas por los videojuegos para unirse a nuestro equipo. Aquí están nuestras vacantes actuales:</p>
+
+      <!-- Job vacancy for Store Salesperson-->
+      <div class="vacante">
+        <h3>Vendedor en Tienda</h3>
+        <p><strong>Descripción:</strong> Buscamos un vendedor entusiasta que tenga un buen conocimiento de videojuegos y consolas para ayudar a nuestros clientes a encontrar lo que buscan.</p>
+        <p><strong>Requisitos:</strong> Experiencia previa en ventas, pasión por los videojuegos, habilidades de comunicación.</p>
+        <p><strong>Ubicación:</strong> Las Palmas de Gran Canaria</p>
+        <p><strong>Cómo aplicar:</strong> Envía tu CV a <a href="mailto:empleos@gamex.com">empleos@gamex.com</a></p>
+      </div>
+
+      <!-- Job vacancy for Digital Marketing Specialist-->
+      <div class="vacante">
+        <h3>Especialista en Marketing Digital</h3>
+        <p><strong>Descripción:</strong> Estamos buscando un especialista en marketing digital para gestionar nuestras campañas en redes sociales y mejorar nuestra presencia en línea.</p>
+        <p><strong>Requisitos:</strong> Experiencia en marketing digital, conocimiento de herramientas de análisis, creatividad.</p>
+        <p><strong>Ubicación:</strong> Remoto</p>
+        <p><strong>Cómo aplicar:</strong> Envía tu CV a <a href="mailto:empleos@gamex.com">empleos@gamex.com</a></p>
+      </div>
+
+      <!-- Job vacancy for Game Developer-->
+      <div class="vacante">
+        <h3>Desarrollador de Juegos</h3>
+        <p><strong>Descripción:</strong> Buscamos un desarrollador de juegos con experiencia en la creación de videojuegos para trabajar en nuestros proyectos internos.</p>
+        <p><strong>Requisitos:</strong> Conocimiento en programación de juegos, experiencia con motores como Unity o Unreal Engine.</p>
+        <p><strong>Ubicación:</strong> Las Palmas de Gran Canaria</p>
+        <p><strong>Cómo aplicar:</strong> Envía tu CV a <a href="mailto:empleos@gamex.com">empleos@gamex.com</a></p>
+      </div>
+    </section>
+    </main>
+    
+    <!-- Shopping cart modal-->
+    <div id="cart-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border-radius: 10px; max-width: 600px; width: 90%; max-height: 80%; overflow-y: auto;">
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <p id="cart-total" style="font-weight: bold; margin-top: 10px;"></p>
+        <button onclick="buy()" class="btn" style="margin-top: 10px;">Proceder al Pago</button>
+        <button onclick="closeCart()" class="btn" style="margin-top: 10px; background-color: #ccc;">Cerrar</button>
+      </div>
+    </div>
+
+    <!-- Checkout modal-->
+    <div id="checkout-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1001;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border-radius: 10px; max-width: 500px; width: 90%;">
+        <h3>Gracias por tu compra</h3>
+        <div id="checkout-items"></div>
+        <p id="checkout-total" style="font-weight: bold; margin-top: 10px;"></p>
+        <button onclick="closeCheckout()" class="btn" style="margin-top: 10px;">Cerrar</button>
+      </div>
+    </div>
+
+    <!-- Footer for Copyright-->
+    <footer>
+      <p>&copy; 2024-2025 GAMEX. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script link for Javascript-->
+    <script src="../java/java.js"></script>
+  </body>
+</html>

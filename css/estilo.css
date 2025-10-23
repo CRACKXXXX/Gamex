@@ -1,0 +1,724 @@
+/* Global body styles */
+body {
+  font-family: "Quantico";
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+/* Dark mode styles */
+body:not(.light-mode) .content-section,
+body:not(.light-mode) .offer-card,
+body:not(.light-mode) .game-card,
+body:not(.light-mode) .event,
+body:not(.light-mode) .vacante,
+body:not(.light-mode) .contact-info,
+body:not(.light-mode) .map-container {
+  background: linear-gradient(135deg, #1d1d1d 0%, #555 100%);
+  color: #fff;
+}
+
+body:not(.light-mode) h1,
+body:not(.light-mode) h2,
+body:not(.light-mode) h3,
+body:not(.light-mode) h4,
+body:not(.light-mode) h5,
+body:not(.light-mode) p,
+body:not(.light-mode) li,
+body:not(.light-mode) .details,
+body:not(.light-mode) .btn {
+  color: #fff;
+}
+
+body:not(.light-mode) .modal-content,
+body:not(.light-mode) #cart-modal > div,
+body:not(.light-mode) #checkout-modal > div {
+  background-color: #333;
+  color: #ccc;
+}
+
+body:not(.light-mode) .cart-item-details p,
+body:not(.light-mode) .cart-item-details strong {
+  color: #ccc;
+}
+
+/* Keyframe animations */
+@keyframes themeChange {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes colorChange {
+  0% { color: #FF0000; }
+  14% { color: #FF7F00; }
+  28% { color: #FFFF00; }
+  42% { color: #00FF00; }
+  57% { color: #0000FF; }
+  71% { color: #4B0082; }
+  85% { color: #9400D3; }
+  100% { color: #FF0000; }
+}
+
+@keyframes backgroundchange {
+  0% { background-color: rgb(184, 2, 2); }
+  25% { background-color: rgb(0, 0, 0); }
+  50% { background-color: rgb(179, 3, 3); }
+  75% { background-color: rgb(0, 0, 0); }
+  100% { background-color: rgb(189, 2, 2); }
+}
+
+/* Animation classes */
+.theme-changing {
+  animation: themeChange 0.3s ease-in-out;
+}
+
+h1 {
+  animation: colorChange 10s infinite;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode header {
+  background: #f0f0f0;
+  color: #000;
+  border: 2px solid #000;
+}
+
+body.light-mode nav button {
+  background: #333;
+  color: #fff;
+}
+
+body.light-mode nav button:hover {
+  background: #555;
+}
+
+body.light-mode .content-section,
+body.light-mode .offer-card,
+body.light-mode .game-card,
+body.light-mode .event,
+body.light-mode .vacante,
+body.light-mode .contact-info,
+body.light-mode .map-container {
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  color: #000;
+}
+
+body.light-mode footer {
+  background: #e0e0e0;
+  color: #000;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode p,
+body.light-mode li,
+body.light-mode .details,
+body.light-mode .btn {
+  color: #000;
+}
+
+body.light-mode .modal-content,
+body.light-mode #cart-modal > div,
+body.light-mode #checkout-modal > div {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+body.light-mode h5 {
+  background: #e0e0e0;
+  color: #000;
+}
+
+/* Header styles */
+header {
+  background: #000;
+  color: #ff0000;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 40px;
+  border: 2px solid #fff;
+  font-family: "Train One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav button {
+  background: #9e0000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.9s, font-size 0.9s;
+  font-family: "Quantico";
+  font-weight: 700;
+  font-style: normal;
+}
+
+nav button:hover {
+  background: #777;
+  font-size: 20px;
+  transition: background 0.5s;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+}
+
+.content-section {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-image: url(../img/fondo.png);
+  background-size: cover;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-style: oblique;
+}
+
+/* Offer container styles */
+.offer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.offer-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 30%;
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.offer-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Game container styles */
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #e0e0e0;
+  padding: 15px;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.game-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Heading styles */
+h3 {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 10px 0;
+  text-align: center;
+}
+
+p {
+  color: #fff;
+  padding: 0 10px;
+  text-align: center;
+}
+
+/* Section styles */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Event card styles */
+.event {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 15px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  display: inline-block;
+}
+
+.event:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-color: #007BFF;
+}
+
+.event img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.event img:hover {
+  transform: scale(1.05);
+}
+
+.event h3 {
+  color: #007BFF;
+  margin: 10px 0;
+}
+
+.details {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.details strong {
+  color: #e0e0e0;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  font-weight: bold;
+  border: none;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Contact info styles */
+.contact-info {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading 5 styles */
+h5 {
+  background: #000;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 30px;
+}
+
+/* Vacante styles */
+.vacante {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  display: ruby-base;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vacante:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.vacante h3 {
+  color: #333;
+}
+
+.vacante p {
+  color: #555;
+}
+
+/* Active button styles */
+.active-button {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  animation: backgroundchange 5s infinite alternate;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Cart item styles */
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.quantity-btn {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity {
+  margin: 0 10px;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.checkout-item {
+  margin-bottom: 10px;
+}
+
+/* Shopping cart modal styles */
+#cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+#cart-modal > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.quantity-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quantity-btn:hover {
+  background-color: #0056b3;
+}
+
+.quantity {
+  margin: 0 10px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.remove-btn {
+  background-color: #f00 !important;
+}
+
+.remove-btn:hover {
+  background-color: #c00 !important;
+}
+
+.checkout-item {
+  margin: 10px 0;
+}
+
+/* Media queries for responsiveness */
+/* Small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+
+  nav ul li {
+    margin: 0 5px;
+  }
+
+  nav button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .content-section {
+    padding: 10px;
+  }
+
+  .offer-card {
+    width: 100%;
+  }
+
+  .game-container {
+    grid-template-columns: 1fr;
+  }
+
+  .event {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  footer {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+}
+
+/* Medium screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 8px 0;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  nav button {
+    padding: 9px 12px;
+  }
+
+  .content-section {
+    padding: 15px;
+  }
+
+  .offer-card {
+    width: 45%;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .event {
+    width: 45%;
+    margin: 15px;
+  }
+
+  footer {
+    padding: 8px 0;
+  }
+}
+
+/* Large screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+  header {
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav button {
+    padding: 10px 15px;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .offer-card {
+    width: 30%;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .event {
+    width: 300px;
+    margin: 20px;
+  }
+
+  footer {
+    padding: 10px 0;
+  }
+}
